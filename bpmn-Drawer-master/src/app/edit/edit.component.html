@@ -1,0 +1,15 @@
+
+<h2 class="file-list-heading">File List</h2>
+
+<ul *ngIf="fileList" class="file-list">
+  <li *ngFor="let file of fileList" class="file-item">
+    <div class="file-info">
+      <div class="file-name">{{ file.name }}</div>
+    </div>
+    <div class="file-actions">
+      <a href="{{ file.url }}" class="file-download">Download</a>
+      <button [routerLink]="['/comp', file.id]" class="file-edit">Edit Diagram</button>
+      <button (click)="deleteXML(file.id)"  >Delete</button>
+    </div>
+  </li>
+</ul>
